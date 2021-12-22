@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondologin" color="">
+  <div class="logo-box">
+    <img [src]="logoPath" alt="">
+  </div>
+  <div class="login-form">
+    <ion-slides>
+      <ion-slide ><img class="tamano_foto" src="../../assets/LOGO_PRACTICOSV3.png"/></ion-slide>
+    </ion-slides>
+    <h2 text-center class="letras_login" >
+      <small >Inicie Sesión para Continuar </small>
+    </h2>
+
+    <ion-list lines="" class="margines">
+      <ion-item color="" class="">
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input  color=""type="text" #user placeholder="Ingresar Usuario"  [(ngModel)]="login.user" ></ion-input>
+      </ion-item>
+
+      <ion-item color="" class="">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input color="" [(ngModel)]="login.pass" type="password" #pass placeholder="Ingresar Contraseña"></ion-input>
+      </ion-item>
+      <ion-item color="" class="">
+        <ion-button mode="ios" color="primary" expand="block" (click)="Autenticar()">
+          Continuar
+          
+        </ion-button>
+      </ion-item>
+    </ion-list>
+    <ion-text style="text-align: center;"><h6>v0.10.5 - 29/11/21</h6></ion-text>
+  </div>
+  
+</ion-content>

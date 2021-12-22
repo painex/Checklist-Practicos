@@ -1,0 +1,380 @@
+<ion-header>
+  <ion-toolbar  color="tertiary">
+    <ion-title class="ion-text-center">Editar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="colores">
+    <ion-card-header>
+      <ion-card-title class="color-letras ion-text-center">Editando práctico rut: {{item_editar.rut}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Rut</ion-label>
+          <ion-input [(ngModel)]="item_editar.rut"></ion-input>
+      </ion-item>
+        <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input [(ngModel)]="item_editar.nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Cargo</ion-label>
+          <ion-input [(ngModel)]="item_editar.cargo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Empresa</ion-label>
+          <ion-input [(ngModel)]="item_editar.empresa"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"><h1>Faena</h1></ion-label>
+          <ion-select [(ngModel)]="item_editar.faena" interface="popover">
+            <ion-select-option   value="LAS TORTOLAS">LAS TORTOLAS</ion-select-option>
+            <ion-select-option value="LOS BRONCES">LOS BRONCES</ion-select-option>
+            <ion-select-option value="LAS TORTOLAS-LOS BRONCES">LAS TORTOLAS/ LOS BRONCES</ion-select-option>
+            <ion-select-option value="MINERODUCTOS">MINERODUCTOS</ion-select-option>
+            <ion-select-option value="BASE COLINA">BASE COLINA</ion-select-option>
+            <ion-select-option value="BASE COLINA ANGLO">BASE COLINA ANGLO</ion-select-option>
+            <ion-select-option value="COACH MINA">COACH MINA</ion-select-option>
+            <ion-select-option value="MINA">MINA</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Licencias</ion-label>
+          <ion-select [(ngModel)]="item_editar.licencias"  multiple="true" interface="popover" >
+            <ion-select-option value="B">B</ion-select-option>
+            <ion-select-option value="D">D</ion-select-option>
+            <ion-select-option value="A1">A1</ion-select-option>
+            <ion-select-option value="A2">A2</ion-select-option>
+            <ion-select-option value="A2 LEY 18290">A2 LEY 18290</ion-select-option>
+            <ion-select-option value="A3">A3</ion-select-option>
+            <ion-select-option value="A4">A4</ion-select-option>
+            <ion-select-option value="A5">A5</ion-select-option>
+            <ion-select-option value="F">F</ion-select-option>
+            <ion-select-option value="N/A">N/A</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Vehiculo</ion-label>
+          <ion-input [(ngModel)]="item_editar.Vehiculo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Marca</ion-label>
+          <ion-input [(ngModel)]="item_editar.marca"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Modelo</ion-label>
+          <ion-input [(ngModel)]="item_editar.modelo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Tipo de caja de cambio</ion-label>
+          <ion-select [(ngModel)]="item_editar.tipo_caja_cambio"  placeholder="Seleccione un tipo caja de cambio" interface="popover">
+            <ion-select-option value="AUTOMÁTICA">AUTOMÁTICA</ion-select-option>
+            <ion-select-option value="MECÁNICA">MECÁNICA</ion-select-option>
+            <ion-select-option value="N/A">N/A</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Tipo rampla</ion-label>
+          <ion-input [(ngModel)]="item_editar.tipo_rampla"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Observación</ion-label>
+          <ion-textarea class="mayuculas" [(ngModel)]="item_editar.Observacion"  placeholder=""></ion-textarea>
+        </ion-item>
+    </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-item>
+    <ion-label><h1>Opciones</h1></ion-label>
+    <ion-button (click)=llenar() disabled={{disableLlenar}}>Llenar</ion-button>
+  </ion-item>
+  <ion-card class="colores2">
+    <ion-card-header>
+      <ion-card-title  class="ion-text-center">Editar Notas Pre Operaacional </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label class="coleres"><h2>Chequeo pre-operación/check list/fatiga y somnolencia</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.chequeo_pre_operacion" >
+          <ion-select-option value="70">70</ion-select-option>
+          <ion-select-option value="60">60</ion-select-option>
+          <ion-select-option value="50">50</ion-select-option>
+          <ion-select-option value="40">40</ion-select-option>
+          <ion-select-option value="30">30</ion-select-option>
+          <ion-select-option value="20">20</ion-select-option>
+          <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label><h2>Interior cabina, pick up, caja herramientas</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.interior_cabina_pickup">
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label><h2>Revisa el vehículo antes de comenzar</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.revisa_vehiculo_antes" >
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label><h2>Revisa y utiliza  (EPP/Cinturón de seguridad)</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.revisa_equipo_epp" >
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="colores">
+    <ion-card-header>
+      <ion-card-title class="color-letras ion-text-center">Editar Notas Conducción </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label><h2>Uso de los espejos, vigila punto ciego</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.uso_espejos_punto_ciego" >
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label><h2>Conduce con las dos manos al volante</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.conduce_manos_volante">
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label><h2>Uso de frenos (todos)</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.uso_frenos">
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label><h2>Hace buen uso de las marchas (subida y bajada)</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.hace_buen_uso_marcha">
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label><h2>Uso del embrague / Caja automática uso función at</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.uso_embrague">
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label><h2>Se estaciona acorde al terreno</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.estaciona_acorde_terreno" >
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="colores2">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Editar Notas Seguridad </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label><h2>Respeta la señalización existente</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.respeta_senializacion">
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label><h2>Mira con bastante anticipación el peligro</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.mira_anticipacion">
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label><h2>Controla riesgo de la Ruta</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.controla_riesgo_ruta">
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label><h2>Demuestra conducción segura y preventiva</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.demuestra_conduccion_segura">
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card> 
+  <ion-card class="colores">
+    <ion-card-header>
+      <ion-card-title class="color-letras ion-text-center">Editar Notas Conocimiento Operacional General </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label><h2>Usa tracción/bloqueo 4-H 4-L según necesidad</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.traccion_4h4l">
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label><h2>Conoce/opera correctamente sistema radial</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.opera_sistema_radial">
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label><h2>Domina procedimiento Cadenas (CATA)</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.domina_porc_cadena">
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label><h2>Entiende la operación del vehículo que conduce</h2></ion-label>
+          <ion-select [(ngModel)]="item_editar.entiende_operacion_vehiculo">
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>     
+  <ion-card class="colores2">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Editar Notas Actitud y Experencia </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label><h2>Refleja experiencia</h2></ion-label>
+          <ion-select   [(ngModel)]="item_editar.refleja_experiencia">
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label><h2>Actitud a la evaluación</h2></ion-label>
+          <ion-select  [(ngModel)]="item_editar.actitud_evaluacion">
+            <ion-select-option value="70">70</ion-select-option>
+            <ion-select-option value="60">60</ion-select-option>
+            <ion-select-option value="50">50</ion-select-option>
+            <ion-select-option value="40">40</ion-select-option>
+            <ion-select-option value="30">30</ion-select-option>
+            <ion-select-option value="20">20</ion-select-option>
+            <ion-select-option value="10">10</ion-select-option>
+        </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" (click)="guardar()" >Editar</ion-button>
+
+</ion-content>

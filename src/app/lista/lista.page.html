@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lista{{ruts}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let rut of ruts">
+    <ion-card-header>
+      <ion-card>{{ruts}}</ion-card>
+    </ion-card-header>
+  </ion-card>
+  <ion-card *ngFor="let section of sections" >
+    <ion-card-header>
+      <ion-card-title>{{section.id_Section}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{section.nombre}}
+      {{ruts}}
+      <ion-input placeholder="{{ruts}}"></ion-input>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

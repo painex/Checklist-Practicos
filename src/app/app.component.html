@@ -1,0 +1,31 @@
+<ion-app>
+  <ion-split-pane contentId="main-content" color="dark">
+    <ion-menu contentId="main-content" type="overlay" color="dark">
+      <ion-content color="dark">
+        <ion-toolbar color="darck">
+        <ion-list id="inbox-list" color="dark">
+          <ion-list-header color="dark">Practicos</ion-list-header>
+          <ion-note color="dark"></ion-note>
+
+          <ion-menu-toggle color="dark" auto-hide="false" *ngFor="let p of appPages; let i = index" color="dark">
+            <ion-item color="dark" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list >
+
+        <ion-list id="labels-list" color="dark">
+          <ion-list-header color="dark"></ion-list-header>
+
+          <ion-item *ngFor="let label of labels" lines="none" color="dark">
+            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp" ></ion-icon>
+            <ion-label>{{ label }}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-toolbar>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet color="dark" id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

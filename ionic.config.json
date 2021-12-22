@@ -1,0 +1,9 @@
+{
+  "name": "angloApp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "52b8f0f7"
+}

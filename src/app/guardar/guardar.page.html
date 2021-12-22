@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title  class="ion-text-center">Datos para Despacho</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let dato of item" class="colores">
+    <ion-card-header>
+      <ion-card-title class="color-letras ion-text-center">{{dato.rut}} {{dato.nombre}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>{{dato.empresa}}</ion-item>
+      <ion-item>{{dato.faena}}</ion-item>
+      <ion-item>{{dato.cargo}}</ion-item>
+      <ion-item>{{dato.Vehiculo}}</ion-item>
+      <ion-item>{{dato.marca}}</ion-item>
+      <ion-item>{{dato.modelo}}</ion-item>
+      <ion-item>{{dato.licencias}}</ion-item>
+      <ion-item>{{dato.Observacion}}</ion-item>
+      <ion-button (click)="Editar(dato.rut)" >Editar</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" (click)="guardar()">Enviar a Nube Explor-K</ion-button>
+</ion-content>
